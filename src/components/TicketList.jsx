@@ -18,7 +18,7 @@ var masterTicketList = [
     issue: 'Case 3'
   }
 
-]
+];
 
 function TicketList(){
 

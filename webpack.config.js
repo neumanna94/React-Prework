@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
 
   entry: [
@@ -38,9 +39,9 @@ module.exports = {
         options: {
           emitWarning: true,
           configFile: "./.eslintrc.json"
-          }
-        },
-        {
+        }
+      },
+      {
         test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,
@@ -50,12 +51,11 @@ module.exports = {
             "react",
           ],
           plugins: [
-            "react-hot-loader/babel",
-            "styled-jsx/babel"
+            "react-hot-loader/babel"
           ]
         }
       }
-    ]
+    ],
   },
 
   plugins: [
@@ -65,7 +65,7 @@ module.exports = {
       template:'template.ejs',
       appMountId: 'react-app-root',
       title: 'React Help Queue',
-      filename: resolve(__dirname,"build", "index.html"),
+      filename: resolve(__dirname, "build", "index.html"),
     }),
   ]
 };
