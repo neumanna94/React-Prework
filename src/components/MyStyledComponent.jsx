@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function MyStyledComponent(props){
   var myStyledComponentStyles = {
@@ -10,8 +11,8 @@ function MyStyledComponent(props){
     <div style={myStyledComponentStyles}>
       <h1> Hey, this is a Styled component </h1>
       <h4> Pretty cool, right?</h4>
-        <p className="red-text">only this paragraph will get the style </p>
-        <style jsx>{`
+      <p className="red-text">only this paragraph will get the style </p>
+      <style jsx>{`
             .red-text {
               color: red;
             }

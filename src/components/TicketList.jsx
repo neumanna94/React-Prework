@@ -1,38 +1,25 @@
 import React from 'react';
 import Ticket from './Ticket';
+import PropTypes from 'prop-types';
 
-var masterTicketList = [
-  {
-    names: 'Thato and Haley',
-    location: '3A',
-    issue: 'Firebase won\'t save record. Halp.'
-  },
-  {
-    names: 'Sleater and Kinney',
-    location: '4B',
-    issue: 'Case 2'
-  },
-  {
-    names: 'Imani & Jacob',
-    location: '9F',
-    issue: 'Case 3'
-  }
 
-];
-
-function TicketList(){
-
+function TicketList(props){
   return (
     <div>
       <hr/>
-      {masterTicketList.map((ticket, index) =>
+      {props.ticketList.map((ticket) =>
         <Ticket names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
-          key={index}/>
+          formattedWaitTime={ticket.formattedWaitTime}
+          key={ticket.id}/>
       )}
     </div>
   );
 }
+
+TicketList.propTypes = {
+  ticketList: PropTypes.array
+};
 
 export default TicketList;
